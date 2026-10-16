@@ -521,9 +521,13 @@ Request it on our Telegram channel!
 <script>
 /* ============================================================
    📚 YAHAN APNI BOOKS ADD KARO
+   ⚠️ Rules:
+   - Title ek hi line me likho (no \n)
+   - thumbnail = direct image URL (.png/.jpg/.webp)
+   - pdf = actual PDF link ya pdf-preview link
+   - URL ke aage/peeche koi space mat chhodo
    ============================================================ */
-const CUSTOM_BOOKS = [       
-        
+const CUSTOM_BOOKS = [
   {
     title: "Physics Med Easy 2.0",
     thumbnail: "https://via.placeholder.com/200x250/1a1e29/facc15?text=Physics",
@@ -548,37 +552,52 @@ const CUSTOM_BOOKS = [
     title: "Chemistry NCERT",
     thumbnail: "https://via.placeholder.com/200x250/dcfce7/166534?text=Chemistry",
     pdf: "https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/4d1d399c-032e-4c5e-b58d-89ade092f44b.pdf"
-  },        {     title: " CBSE Class 11 Chapterwise 20 Most Probable Questions Physics, Chemistry, Biology and Mathematics For 2026 Exams | NCERT References & Detailed Explanations",
-            thumbnail: "  https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/221dff79-49fa-4f70-b081-759b7612d505.png",
-            pdf: "https://store.pw.live/pdf-preview?url=https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/32924260-196f-49bd-bd1b-51426cc145a3.pdf "  },
-        {     title: " PW CBSE Class 11 Business Studies Book l 500+ MCQs and Practice Questions with Detailed Solutions and Flowcharts & CBSE 2026 Sample Papers  ",
-thumbnail:"https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/6cf0d19f-920b-4f59-9112-edd696de8e20.png ",
-            pdf: " "  },
-        {     title: "PW CBSE Class 11 Question & Concept Bank (QCB) Chemistry Chapter-wise and Topic-wise Solved Questions For 2027 with Competency Based Question ",
-            thumbnail: " https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/132b0081-f476-4d39-8c74-37231cf37144_base.webp ",
-            pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/ef9ccee5-c416-4ac8-906b-859f621abe83.pdf "  },
-                {     title: "PW CBSE Class 11 Applied Mathematics | As per latest CBSE Pattern | Chapterwise Theory, Practice Questions with Detailed Explanation & Latest 2026-2027 Sample Papers
-By PW ",
-            thumbnail: "https://store.pw.live/products/pw-commerce-applied-maths-class-11-th-2027  ",
-            pdf: " https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/cb8ace05-c987-457f-ac52-90078fb48f7f.pdf"  },
-        {     title: " PW CBSE Class 11 Question & Concept Bank (QCB) Physics Chapter-wise and Topic-wise Solved Questions For 2027 Exams with Competency Based Question",
-            thumbnail: " https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/e9656e7e-f1ac-4480-84d7-0a098ffb624f.png ",
-            pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/56f74bc0-a206-488d-8094-d6fca1cf1433.pdf "  },
-        {     title: "PW CBSE Class 11 Question & Concept Bank (QCB) Biology Chapter-wise and Topic-wise Solved Questions For 2027 Exams with Competency Based Question" ,
-            thumbnail: " https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/8e5b3a49-d28a-4a7f-bb1c-6c93da70889e.png ",
-            pdf: " https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/bd9f1e60-cac7-4519-9d0a-fc3738cd3386.pdf"  }
-        
+  },
+  {
+    title: "CBSE Class 11 Chapterwise 20 Most Probable Questions PCMB for 2026 Exams",
+    thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/221dff79-49fa-4f70-b081-759b7612d505.png",
+    pdf: "https://store.pw.live/pdf-preview?url=https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/32924260-196f-49bd-bd1b-51426cc145a3.pdf"
+  },
+  {
+    title: "PW CBSE Class 11 Business Studies Book with 500+ MCQs and Sample Papers",
+    thumbnail: "https://d2bps9p1kiy4ka.cloudfront.net/5eb393ee95fab7468a79d189/6cf0d19f-920b-4f59-9112-edd696de8e20.png",
+    pdf: ""
+  },
+  {
+    title: "PW CBSE Class 11 QCB Chemistry Chapter-wise & Topic-wise Solved Questions 2027",
+    thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/132b0081-f476-4d39-8c74-37231cf37144_base.webp",
+    pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/ef9ccee5-c416-4ac8-906b-859f621abe83.pdf"
+  },
+  {
+    title: "PW CBSE Class 11 Applied Mathematics Chapterwise Theory Practice & Sample Papers 2026-27",
+    thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/8e5b3a49-d28a-4a7f-bb1c-6c93da70889e.png",
+    pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/cb8ace05-c987-457f-ac52-90078fb48f7f.pdf"
+  },
+  {
+    title: "PW CBSE Class 11 QCB Physics Chapter-wise & Topic-wise Solved Questions 2027",
+    thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/e9656e7e-f1ac-4480-84d7-0a098ffb624f.png",
+    pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/56f74bc0-a206-488d-8094-d6fca1cf1433.pdf"
+  },
+  {
+    title: "PW CBSE Class 11 QCB Biology Chapter-wise & Topic-wise Solved Questions 2027",
+    thumbnail: "https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/8e5b3a49-d28a-4a7f-bb1c-6c93da70889e.png",
+    pdf: "https://store.pw.live/pdf-preview?url=https://static.pw.live/5eb393ee95fab7468a79d189/PW_STORE/bd9f1e60-cac7-4519-9d0a-fc3738cd3386.pdf"
+  }
 ];
 
 /* ---------- Helpers ---------- */
 function buildPreviewUrl(pdfUrl) {
-  if (!pdfUrl) return '';
-  if (pdfUrl.includes('pdf-preview')) return pdfUrl;
-  return 'https://store.pw.live/pdf-preview?url=' + encodeURIComponent(pdfUrl);
+  if (!pdfUrl || !pdfUrl.trim()) return '';
+  const url = pdfUrl.trim();
+  if (url.includes('pdf-preview')) return url;
+  if (url.endsWith('.pdf')) {
+    return 'https://store.pw.live/pdf-preview?url=' + encodeURIComponent(url);
+  }
+  return url;
 }
 
 function normalizeCustomBook(b, index) {
-  const pdfUrl = b.pdf || b.link || '';
+  const pdfUrl = (b.pdf || b.link || '').trim();
   const previewUrl = buildPreviewUrl(pdfUrl);
   const THUMB_COLORS = [
     "1a1e29/facc15","be185d/ffffff","dcfce7/166534","e0e7ff/1a1e29",
@@ -587,8 +606,8 @@ function normalizeCustomBook(b, index) {
   ];
   const autoThumb = 'https://via.placeholder.com/200x250/' + THUMB_COLORS[index % THUMB_COLORS.length] + '?text=' + encodeURIComponent((b.title || 'Book').substring(0, 12));
   return {
-    title: b.title || ('Book ' + (index + 1)),
-    thumbnail: b.thumbnail || b.image || autoThumb,
+    title: (b.title || ('Book ' + (index + 1))).replace(/\s+/g, ' ').trim(),
+    thumbnail: (b.thumbnail || b.image || autoThumb).trim(),
     link: previewUrl,
     downloadLink: pdfUrl,
     author: b.author || "PW",
@@ -732,12 +751,17 @@ const ncertHeader = document.getElementById('ncertHeader');
 const allBooksSection = document.getElementById('allBooksSection');
 const bannerSection = document.getElementById('bannerSection');
 
+function escapeAttr(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 function createBookCard(book, isGrid) {
   const freeBadge = book.free ? '<div class="free-badge"><i class="fas fa-tag"></i> FREE</div>' : '';
+  const safeTitle = escapeAttr(book.title);
   if (isGrid) {
-    return '<div class="all-book-card" data-book-title="' + book.title + '">' +
+    return '<div class="all-book-card" data-book-title="' + safeTitle + '">' +
       '<div class="all-book-image-wrapper">' +
-        '<img src="' + book.thumbnail + '" alt="' + book.title + '">' +
+        '<img src="' + escapeAttr(book.thumbnail) + '" alt="' + safeTitle + '" onerror="this.style.display=\'none\'">' +
         freeBadge +
       '</div>' +
       (book.tag ? '<div class="book-meta" style="margin-bottom:4px;"><span class="highlight-tag">' + book.tag + '</span></div>' : '') +
@@ -745,9 +769,9 @@ function createBookCard(book, isGrid) {
       '<div class="all-book-author">' + (book.author || '') + '</div>' +
     '</div>';
   } else {
-    return '<div class="book-card" data-book-title="' + book.title + '">' +
+    return '<div class="book-card" data-book-title="' + safeTitle + '">' +
       '<div class="book-image-wrapper">' +
-        '<img src="' + book.thumbnail + '" alt="' + book.title + '">' +
+        '<img src="' + escapeAttr(book.thumbnail) + '" alt="' + safeTitle + '" onerror="this.style.display=\'none\'">' +
         freeBadge +
       '</div>' +
       (book.tag ? '<div class="book-meta"><span class="highlight-tag">' + book.tag + '</span></div>' : '') +
@@ -828,6 +852,12 @@ const pdfBackBtn = document.getElementById('pdfBackBtn');
 function openPdf(book) {
   if (!book) return;
   pdfTitle.textContent = book.title;
+
+  if (!book.link) {
+    showToast('⚠️ PDF link not available for this book');
+    return;
+  }
+
   pdfLoading.style.display = 'flex';
   pdfIframe.src = '';
   pdfIframe.style.height = '100%';
@@ -964,8 +994,8 @@ function renderRecentBooks() {
 
   container.innerHTML = recent.map(book => {
     const timeAgo = getTimeAgo(book.openedAt);
-    return '<div class="recent-book-item" data-book-title="' + book.title + '">' +
-      '<img src="' + book.thumbnail + '" alt="' + book.title + '" class="recent-book-thumb">' +
+    return '<div class="recent-book-item" data-book-title="' + escapeAttr(book.title) + '">' +
+      '<img src="' + escapeAttr(book.thumbnail) + '" alt="' + escapeAttr(book.title) + '" class="recent-book-thumb" onerror="this.style.display=\'none\'">' +
       '<div class="recent-book-info">' +
         '<div class="recent-book-title">' + book.title + '</div>' +
         '<div class="recent-book-author">' + (book.author || 'Unknown') + '</div>' +
